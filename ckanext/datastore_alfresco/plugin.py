@@ -1,14 +1,11 @@
 import ckan.plugins as plugins
-import ckan.plugins.toolkit as toolkit
+from ckanext.datastore.interfaces import IDatastoreBackend
+from ckanext.datastore_alfresco.alfresco_rest import DatastoreAlfrescoBackend
 
 
 class DatastoreAlfrescoPlugin(plugins.SingletonPlugin):
-    plugins.implements(plugins.IConfigurer)
-
-    # IConfigurer
-
-    def update_config(self, config_):
-        toolkit.add_template_directory(config_, 'templates')
-        toolkit.add_public_directory(config_, 'public')
-        toolkit.add_resource('fanstatic',
-            'datastore_alfresco')
+    plugins.implements(IDatastoreBackend)
+    
+    
+    def register_backends(self):
+        return {u'alfresco': DatastoreAlfrescoBackend}
