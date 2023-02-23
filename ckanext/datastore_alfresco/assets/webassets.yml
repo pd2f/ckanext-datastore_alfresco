@@ -1,0 +1,14 @@
+# datastore_alfresco-js:
+#   filter: rjsmin
+#   output: ckanext-datastore_alfresco/%(version)s-datastore_alfresco.js
+#   contents:
+#     - js/datastore_alfresco.js
+#   extra:
+#     preload:
+#       - base/main
+
+# datastore_alfresco-css:
+#   filter: cssrewrite
+#   output: ckanext-datastore_alfresco/%(version)s-datastore_alfresco.css
+#   contents:
+#     - css/datastore_alfresco.css
